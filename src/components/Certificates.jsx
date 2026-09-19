@@ -5,7 +5,7 @@ import {
   cert_soft_power_award_png,
   cert_startup_png,
   cert_business_competition_png,
-  pdf_page_5_png,
+  cert_toeic_png,
 } from '../assets/images';
 
 export default function Certificates({ onOpenLightbox }) {
@@ -81,7 +81,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: 'TOEIC Preparation',
       color: '#0ea5e9',
       icon: 'fa-language',
-      image: pdf_page_5_png,
+      image: cert_toeic_png,
       imageCaption: 'เกียรติบัตร: เตรียมความพร้อมการสอบวัดมาตรฐานภาษาอังกฤษ TOEIC (18 ม.ค. 68)'
     }
   ];
