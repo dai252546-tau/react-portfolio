@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import {
-  pdf_page_3_png,
-  pdf_page_4_png,
+  cert_ai_info_mgmt_png,
+  cert_workshop_hair_makeup_png,
+  cert_soft_power_award_png,
+  cert_startup_png,
+  cert_business_competition_png,
   pdf_page_5_png,
 } from '../assets/images';
 
@@ -18,7 +21,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: 'AI & Information Management',
       color: '#0284c7',
       icon: 'fa-robot',
-      image: pdf_page_3_png,
+      image: cert_ai_info_mgmt_png,
       imageCaption: 'เกียรติบัตร: การอบรมเชิงปฏิบัติการ AI เพื่อการจัดการสารสนเทศ (24 มิ.ย. 67)'
     },
     {
@@ -30,7 +33,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: 'Workshop ทักษะอาชีพที่ 2',
       color: '#f43f5e',
       icon: 'fa-wand-magic-sparkles',
-      image: pdf_page_3_png,
+      image: cert_workshop_hair_makeup_png,
       imageCaption: 'เกียรติบัตร: Workshop การพัฒนาทักษะอาชีพ 2 (4 ก.ค. 67)'
     },
     {
@@ -42,7 +45,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: '🏆 รางวัลชมเชย แผนธุรกิจ',
       color: '#eab308',
       icon: 'fa-trophy',
-      image: pdf_page_4_png,
+      image: cert_soft_power_award_png,
       imageCaption: 'เกียรติบัตร: รางวัลชมเชย การแข่งขันนำเสนอแผนธุรกิจ Soft Power (20 พ.ย. 67)'
     },
     {
@@ -54,7 +57,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: 'FMS Young Startup',
       color: '#10b981',
       icon: 'fa-lightbulb',
-      image: pdf_page_4_png,
+      image: cert_startup_png,
       imageCaption: 'เกียรติบัตร: การอบรมเชิงปฏิบัติการ การจัดทำแผนธุรกิจ FMS Young Startup (8 พ.ย. 67)'
     },
     {
@@ -66,7 +69,7 @@ export default function Certificates({ onOpenLightbox }) {
       badge: 'แข่งขันทักษะธุรกิจ',
       color: '#6366f1',
       icon: 'fa-briefcase',
-      image: pdf_page_5_png,
+      image: cert_business_competition_png,
       imageCaption: 'เกียรติบัตร: การแข่งขันทักษะด้านการจัดการธุรกิจ (16 ก.พ. 68)'
     },
     {
