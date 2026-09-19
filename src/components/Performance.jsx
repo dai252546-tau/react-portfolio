@@ -5,7 +5,7 @@ import {
   perf_recruitment_system_png,
   perf_hr_poster_png,
   perf_admission_poster_jpg,
-  performance_page_10_png,
+  perf_banner_maedaoruang_png,
 } from '../assets/images';
 
 export default function Performance({ onOpenLightbox }) {
@@ -93,8 +93,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'ผลงานพัฒนาสินค้าชุมชน: แบรนด์ "ร้านแม่ดาวเรือง"',
       badge: 'Community Soft Power & Branding',
       icon: 'fa-store',
-      image: performance_page_10_png,
-      imageCaption: 'อัตลักษณ์แบรนด์แม่ดาวเรือง: ป้ายไวนิลหน้าร้าน, คาแรคเตอร์โลโก้, และฉลากน้ำพริก 3 รสชาติ',
+      image: perf_banner_maedaoruang_png,
+      imageCaption: 'อัตลักษณ์แบรนด์แม่ดาวเรือง: ป้ายไวนิลหน้าร้านอาหารพื้นบ้าน รสแซ่บ ราคาถูก',
       desc: 'ออกแบบและพัฒนาอัตลักษณ์แบรนด์ร้านอาหารพื้นบ้าน "แม่ดาวเรือง" ครบวงจร ตั้งแต่ป้ายไวนิลหน้าร้าน คาแรคเตอร์โลโก้ และฉลากบรรจุภัณฑ์ผลิตภัณฑ์น้ำพริกพื้นบ้านสร้างมูลค่าเพิ่มแก่ชุมชน',
       highlights: [
         'ออกแบบป้ายไวนิลหน้าร้านอาหารพื้นบ้าน ขนาดใหญ่ สดใส ดึงดูดสายตา',

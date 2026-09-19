@@ -1,5 +1,13 @@
 import React from 'react';
-import { pdf_page_2_png } from '../assets/images';
+import {
+  pdf_page_2_png,
+  talent_singing_jpg,
+  talent_wedding_model_jpg,
+  talent_makeup_jpg,
+  talent_flower_wire_jpg,
+  talent_nail_art_jpg,
+  talent_bracelet_png,
+} from '../assets/images';
 
 export default function Talent({ onOpenLightbox }) {
   const talents = [
@@ -8,42 +16,54 @@ export default function Talent({ onOpenLightbox }) {
       icon: 'fa-microphone-lines',
       tag: 'Music & Performance',
       desc: 'ความสามารถด้านการขับร้อง ถ่ายทอดอารมณ์เพลง และสร้างบรรยากาศสนุกสนานบนเวทีในกิจกรรมต่าง ๆ',
-      color: '#0284c7'
+      color: '#0284c7',
+      image: talent_singing_jpg,
+      caption: 'ความสามารถพิเศษ: ร้องเพลงบนเวที'
     },
     {
       title: 'ถ่ายแบบชุดแต่งงาน',
       icon: 'fa-camera-retro',
       tag: 'Modeling & Personality',
       desc: 'ประสบการณ์ถ่ายแบบชุดวิวาห์ สื่อสารบุคลิกภาพสง่างาม ทัศนคติมั่นใจ และสะท้อนภาพลักษณ์ที่ดีของแบรนด์',
-      color: '#0ea5e9'
+      color: '#0ea5e9',
+      image: talent_wedding_model_jpg,
+      caption: 'ความสามารถพิเศษ: ถ่ายแบบชุดแต่งงาน'
     },
     {
       title: 'แต่งหน้า',
       icon: 'fa-wand-magic-sparkles',
       tag: 'Beauty & Makeup Art',
       desc: 'ทักษะศิลปะการแต่งหน้า เสริมสร้างบุคลิกภาพความมั่นใจสำหรับออกงาน พิธีการ และถ่ายภาพโปรไฟล์',
-      color: '#38bdf8'
+      color: '#38bdf8',
+      image: talent_makeup_jpg,
+      caption: 'ความสามารถพิเศษ: ช่างแต่งหน้าและเสริมสร้างบุคลิกภาพ'
     },
     {
       title: 'ดอกไม้จากลวดกำมะหยี่',
       icon: 'fa-spa',
       tag: 'Handmade Craft',
       desc: 'งานประดิษฐ์ช่อดอกไม้แฮนด์เมดจากลวดกำมะหยี่อย่างประณีต ใช้ความคิดสร้างสรรค์และความอดทนสูง',
-      color: '#06b6d4'
+      color: '#06b6d4',
+      image: talent_flower_wire_jpg,
+      caption: 'ความสามารถพิเศษ: งานประดิษฐ์ดอกไม้จากลวดกำมะหยี่'
     },
     {
       title: 'เพ้นท์เล็บปลอม',
       icon: 'fa-hand-sparkles',
       tag: 'Nail Art Design',
       desc: 'ออกแบบลวดลายเพ้นท์เล็บปลอมตามเทรนด์แฟชั่น ผสมผสานคู่สีและดีไซน์ประณีต',
-      color: '#0284c7'
+      color: '#0284c7',
+      image: talent_nail_art_jpg,
+      caption: 'ความสามารถพิเศษ: ออกแบบและเพ้นท์เล็บปลอม'
     },
     {
       title: 'สร้อยข้อมือลูกปัด (IG: Jewelrybirdstudio)',
       icon: 'fa-gem',
       tag: 'Craft & Small Business',
       desc: 'ร้อยสร้อยข้อมือและเครื่องประดับลูกปัดดีไซน์น่ารัก พร้อมบริหารร้านออนไลน์บน Instagram',
-      color: '#0ea5e9'
+      color: '#0ea5e9',
+      image: talent_bracelet_png,
+      caption: 'ความสามารถพิเศษ: งานร้อยสร้อยข้อมือลูกปัดแฮนด์เมด (IG: Jewelrybirdstudio)'
     }
   ];
 
@@ -107,39 +127,106 @@ export default function Talent({ onOpenLightbox }) {
           </div>
         </div>
 
-        <div className="hard-skills-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+        <div className="hard-skills-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
           {talents.map((item, idx) => (
-            <div key={idx} className="hard-card" style={{ padding: '24px', alignItems: 'flex-start' }}>
-              <div 
-                className="hard-icon-box" 
-                style={{ 
-                  background: `linear-gradient(135deg, var(--ocean-navy), ${item.color})`,
-                  width: '52px',
-                  height: '52px',
-                  fontSize: '1.4rem'
-                }}
-              >
-                <i className={`fa-solid ${item.icon}`}></i>
-              </div>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                  <h4 style={{ fontSize: '1.1rem', margin: 0 }}>{item.title}</h4>
+            <div 
+              key={idx} 
+              className="hard-card" 
+              style={{ 
+                padding: '0',
+                overflow: 'hidden',
+                borderRadius: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.04)'
+              }}
+            >
+              <div>
+                {/* ภาพถ่ายความสามารถพิเศษของแต่ละหัวข้อ */}
+                <div 
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '220px',
+                    overflow: 'hidden',
+                    background: '#f1f5f9',
+                    cursor: onOpenLightbox ? 'pointer' : 'default',
+                    borderBottom: '1px solid #e2e8f0'
+                  }}
+                  onClick={() => onOpenLightbox && onOpenLightbox(item.image, item.title, item.caption)}
+                  title="คลิกเพื่อดูภาพขยายขนาดเต็ม"
+                >
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 30%',
+                      transition: 'transform 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '8px',
+                    background: 'rgba(5, 22, 42, 0.75)',
+                    color: 'white',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '0.72rem',
+                    backdropFilter: 'blur(4px)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}>
+                    <i className="fa-solid fa-magnifying-glass-plus"></i> ดูรูปภาพ
+                  </div>
                 </div>
-                <span style={{ 
-                  display: 'inline-block', 
-                  fontSize: '0.75rem', 
-                  fontWeight: 600, 
-                  color: 'var(--ocean-primary)',
-                  background: '#e0f2fe',
-                  padding: '2px 8px',
-                  borderRadius: '12px',
-                  marginBottom: '8px'
-                }}>
-                  {item.tag}
-                </span>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
-                  {item.desc}
-                </p>
+
+                <div style={{ padding: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                    <span style={{ 
+                      display: 'inline-block', 
+                      fontSize: '0.75rem', 
+                      fontWeight: 600, 
+                      color: item.color,
+                      background: `${item.color}15`,
+                      padding: '4px 10px',
+                      borderRadius: '12px'
+                    }}>
+                      {item.tag}
+                    </span>
+                    <div 
+                      className="hard-icon-box" 
+                      style={{ 
+                        background: `linear-gradient(135deg, var(--ocean-navy), ${item.color})`,
+                        width: '36px',
+                        height: '36px',
+                        fontSize: '1rem',
+                        borderRadius: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'white'
+                      }}
+                    >
+                      <i className={`fa-solid ${item.icon}`}></i>
+                    </div>
+                  </div>
+
+                  <h4 style={{ fontSize: '1.12rem', color: 'var(--ocean-navy)', marginBottom: '8px' }}>
+                    {item.title}
+                  </h4>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
