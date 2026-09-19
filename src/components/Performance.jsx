@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import {
+  performance_page_6_png,
+  performance_page_7_png,
+  performance_page_8_png,
+  performance_page_9_png,
+  performance_page_10_png,
+} from '../assets/images';
 
-export default function Performance() {
+export default function Performance({ onOpenLightbox }) {
   const [activeTab, setActiveTab] = useState('all');
 
   const projects = [
@@ -10,20 +17,24 @@ export default function Performance() {
       title: 'สร้าง Dashboard ด้วย Google Data Studio (Looker Studio)',
       badge: 'Data Analytics & Reporting',
       icon: 'fa-chart-pie',
-      desc: 'ออกแบบ Expense Report และ Dashboard รายงานข้อมูลค่าใช้จ่ายแบบ Real-time พร้อมกราฟเปรียบเทียบและการจัดหมวดหมู่ข้อมูลอย่างเป็นระบบเพื่อการตัดสินใจทางธุรกิจ',
+      image: performance_page_6_png,
+      imageCaption: 'Dashboard Google Data Studio & ระบบแจ้งเตือน Line Notify',
+      desc: 'ออกแบบ Expense Report และ Dashboard รายงานข้อมูลค่าใช้จ่ายแบบ Real-time พร้อมแผนภูมิวงกลมและกราฟแท่งเปรียบเทียบ เพื่อการวิเคราะห์และตัดสินใจทางธุรกิจอย่างแม่นยำ',
       highlights: [
-        'ออกแบบ KPI Cards แสดงยอดรวมและการจัดประเภท',
-        'สร้างแผนภูมิวงกลมและกราฟแท่งเปรียบเทียบค่าใช้จ่าย',
-        'เชื่อมโยง Data Source วิเคราะห์ข้อมูลอัตโนมัติ'
+        'ออกแบบ KPI Cards แสดงยอดรวมและการจัดประเภทค่าใช้จ่าย',
+        'สร้างแผนภูมิวงกลมและกราฟแท่งเปรียบเทียบค่าใช้จ่ายตามหมวดหมู่',
+        'เชื่อมโยง Data Source วิเคราะห์และสรุปผลข้อมูลอัตโนมัติ'
       ]
     },
     {
       category: 'system',
       categoryName: 'ระบบและเครื่องมือดิจิทัล',
-      title: 'Google Forms + Line Notify แบบไม่จำกัดจำนวนการส่ง',
+      title: 'Google Forms + แนบรูปภาพ แจ้งเตือนผ่าน Line Notify',
       badge: 'Automation & Workflow',
       icon: 'fa-bell',
-      desc: 'พัฒนาระบบสำรวจข้อมูลการเข้าอบรม พร้อมฟังก์ชันแนบรูปภาพหลักฐานและส่งการแจ้งเตือนแบบทันที (Instant Notification) ผ่าน Line Notify อัตโนมัติไปยังกลุ่มงาน',
+      image: performance_page_6_png,
+      imageCaption: 'ฟอร์มสำรวจข้อมูลพร้อมระบบส่งรูปภาพและแจ้งเตือนผ่าน Line Notify ทันที',
+      desc: 'พัฒนาระบบสำรวจข้อมูลการเข้าอบรม พร้อมฟังก์ชันแนบรูปภาพหลักฐานและส่งการแจ้งเตือนแบบทันที (Instant Notification) ผ่าน Line Notify แบบไม่จำกัดจำนวนครั้งไปยังกลุ่มงาน',
       highlights: [
         'สร้างแบบฟอร์มลงทะเบียนและรับไฟล์ภาพหลักฐาน',
         'เชื่อมต่อ Webhook / Google Apps Script สู่ Line Notify',
@@ -36,10 +47,12 @@ export default function Performance() {
       title: 'สร้างระบบรับสมัครงาน (Recruitment System & AppSheet)',
       badge: 'HR Application & Database',
       icon: 'fa-users-gear',
-      desc: 'พัฒนาระบบฐานข้อมูลและแอปพลิเคชันจัดการใบสมัครงาน รวบรวมข้อมูลผู้สมัคร ตำแหน่งงานที่ต้องการ เงินเดือน ประวัติส่วนตัว พร้อมลายเซ็นดิจิทัลและสถานะการสัมภาษณ์',
+      image: performance_page_7_png,
+      imageCaption: 'โครงสร้างฐานข้อมูล Google Sheets และหน้าตา Application สำหรับฝ่าย HR',
+      desc: 'พัฒนาระบบฐานข้อมูลและแอปพลิเคชันจัดการใบสมัครงาน รวบรวมข้อมูลผู้สมัคร ตำแหน่งงาน เงินเดือน ประวัติส่วนตัว พร้อมรองรับลายเซ็นดิจิทัลและสถานะการสัมภาษณ์',
       highlights: [
         'ออกแบบ Data Schema บน Google Sheets (Row, Type, Key, Label)',
-        'พัฒนา UI หน้าตา Application สำหรับฝ่าย HR และผู้สมัคร',
+        'พัฒนา UI หน้าตา Application สำหรับฝ่ายบุคคล (HR) และผู้สมัคร',
         'รองรับการแนบภาพผู้สมัคร ลายเซ็นอิเล็กทรอนิกส์ และสถานะเรียกสัมภาษณ์'
       ]
     },
@@ -49,24 +62,28 @@ export default function Performance() {
       title: 'สื่อใบประกาศรับสมัครพนักงาน (HR Recruitment Posters)',
       badge: 'Graphic & Recruitment Design',
       icon: 'fa-bullhorn',
-      desc: 'ออกแบบใบประกาศรับสมัครพนักงาน เช่น ตำแหน่งนักการบัญชี, ธุรการ จัดวาง Layout สวยงาม ชัดเจน ระบุคุณสมบัติ สวัสดิการ และช่องทางการติดต่ออย่างมืออาชีพ',
+      image: performance_page_8_png,
+      imageCaption: 'ใบประกาศรับสมัครพนักงาน ตำแหน่งนักการบัญชี (บริษัท TKCHUR. จำกัด)',
+      desc: 'ออกแบบใบประกาศรับสมัครงาน เช่น ตำแหน่งนักการบัญชี คุมโทนสี Corporate สวยงาม ชัดเจน ระบุคุณสมบัติ สิทธิประโยชน์ สวัสดิการ และช่องทางการติดต่ออย่างเป็นมืออาชีพ',
       highlights: [
-        'จัดวาง Typography และ Visual Hierarchy ให้ข้อมูลอ่านง่ายและน่าสนใจ',
-        'คุมโทนสี Corporate สอดคล้องกับภาพลักษณ์องค์กร',
-        'ระบุขอบเขตงาน รายละเอียดเงินเดือน และ QR Code ติดต่อชัดเจน'
+        'จัดวาง Typography และ Visual Hierarchy ให้อ่านง่าย สะดุดตา',
+        'คุมโทนสี Corporate สร้างภาพลักษณ์น่าเชื่อถือแก่องค์กร',
+        'ระบุขอบเขตงาน รายละเอียดเงินเดือน และข้อมูลติดต่อครบถ้วน'
       ]
     },
     {
       category: 'design',
       categoryName: 'งานออกแบบกราฟิก & สื่อประชาสัมพันธ์',
-      title: 'สื่อใบประกาศรับสมัครนักศึกษาใหม่ (PR & Admission Posters)',
+      title: 'สื่อใบประกาศรับสมัครเรียน & สื่อองค์กร (PR & Admission Posters)',
       badge: 'Brand PR & Marketing Materials',
       icon: 'fa-graduation-cap',
-      desc: 'ออกแบบโปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่ คณะวิทยาการจัดการ สาขาวิชาการจัดการธุรกิจ มรภ.กำแพงเพชร เพื่อใช้ในสื่อออนไลน์และสิ่งพิมพ์',
+      image: performance_page_9_png,
+      imageCaption: 'โปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่และรับสมัครงาน',
+      desc: 'ออกแบบโปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่ คณะวิทยาการจัดการ สาขาวิชาการจัดการธุรกิจ มรภ.กำแพงเพชร ดีไซน์สดใส ดึงดูดกลุ่มเป้าหมายนักเรียนและผู้สนใจ',
       highlights: [
-        'ดีไซน์สดใส ดึงดูดกลุ่มเป้าหมายนักเรียนและผู้สนใจศึกษาต่อ',
-        'ระบุกำหนดการรอบรับสมัคร (รอบที่ 1-3) รายละเอียดหลักสูตรครบถ้วน',
-        'ออกแบบ Infographic และ QR Code สมัครเรียนออนไลน์'
+        'ดีไซน์สดใส ทันสมัย ดึงดูดสายตาและสร้างการจดจำ',
+        'ระบุกำหนดการรอบรับสมัคร (รอบที่ 1-3) รายละเอียดหลักสูตรชัดเจน',
+        'ออกแบบ Infographic และ QR Code สมัครเรียนออนไลน์สะดวกรวดเร็ว'
       ]
     },
     {
@@ -75,11 +92,13 @@ export default function Performance() {
       title: 'ผลงานพัฒนาสินค้าชุมชน: แบรนด์ "ร้านแม่ดาวเรือง"',
       badge: 'Community Soft Power & Branding',
       icon: 'fa-store',
-      desc: 'ออกแบบและพัฒนาอัตลักษณ์แบรนด์ร้านอาหารพื้นบ้าน "แม่ดาวเรือง" ครบวงจร ตั้งแต่ป้ายไวนิลหน้าร้าน โลโก้ และฉลากบรรจุภัณฑ์ผลิตภัณฑ์น้ำพริกพื้นบ้าน',
+      image: performance_page_10_png,
+      imageCaption: 'อัตลักษณ์แบรนด์แม่ดาวเรือง: ป้ายไวนิลหน้าร้าน, คาแรคเตอร์โลโก้, และฉลากน้ำพริก 3 รสชาติ',
+      desc: 'ออกแบบและพัฒนาอัตลักษณ์แบรนด์ร้านอาหารพื้นบ้าน "แม่ดาวเรือง" ครบวงจร ตั้งแต่ป้ายไวนิลหน้าร้าน คาแรคเตอร์โลโก้ และฉลากบรรจุภัณฑ์ผลิตภัณฑ์น้ำพริกพื้นบ้านสร้างมูลค่าเพิ่มแก่ชุมชน',
       highlights: [
         'ออกแบบป้ายไวนิลหน้าร้านอาหารพื้นบ้าน ขนาดใหญ่ สดใส ดึงดูดสายตา',
-        'ออกแบบคาแรคเตอร์โลโก้ "แม่ดาวเรือง" สร้างการจดจำอันอบอุ่นและเป็นเอกลักษณ์',
-        'ออกแบบฉลากสติ๊กเกอร์ติดกระปุกน้ำพริก 3 สูตร: น้ำพริกแมงดา, น้ำพริกปลาย่าง, น้ำพริกผัดหมู'
+        'ออกแบบคาแรคเตอร์โลโก้ "แม่ดาวเรือง" อบอุ่น เป็นมิตร และเป็นเอกลักษณ์',
+        'ออกแบบฉลากสติ๊กเกอร์ติดกระปุกน้ำพริก 3 สูตร: แมงดา, ปลาย่าง, ผัดหมู'
       ]
     }
   ];
@@ -97,7 +116,7 @@ export default function Performance() {
             <i className="fa-solid fa-briefcase"></i> ผลงานและโครงงานจริง (Performance)
           </h2>
           <p className="section-desc">
-            รวบรวมผลงานด้านการสร้างระบบดิจิทัล งานออกแบบกราฟิก สื่อประชาสัมพันธ์ และการสร้างแบรนด์สินค้าชุมชน
+            รวบรวมผลงานจริงจากแฟ้มสะสมผลงาน พร้อมรูปภาพประกอบการพัฒนาระบบ สื่อประชาสัมพันธ์ และการสร้างแบรนด์
           </p>
 
           {/* Filter Tabs */}
@@ -139,63 +158,111 @@ export default function Performance() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '28px',
+                padding: '0',
                 borderTop: '4px solid var(--ocean-primary)',
-                background: 'white'
+                background: 'white',
+                overflow: 'hidden',
+                borderRadius: '16px'
               }}
             >
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    color: 'var(--ocean-primary)',
-                    background: '#e0f2fe',
-                    padding: '4px 10px',
-                    borderRadius: '12px'
-                  }}>
-                    {proj.badge}
-                  </span>
+                {/* รูปภาพประกอบผลงานจริงจาก PDF */}
+                <div 
+                  style={{ 
+                    position: 'relative', 
+                    width: '100%', 
+                    height: '240px', 
+                    overflow: 'hidden',
+                    background: '#f1f5f9',
+                    cursor: onOpenLightbox ? 'pointer' : 'default'
+                  }}
+                  onClick={() => onOpenLightbox && onOpenLightbox(proj.image, proj.title, proj.imageCaption)}
+                  title="คลิกเพื่อดูภาพขนาดใหญ่"
+                >
+                  <img 
+                    src={proj.image} 
+                    alt={proj.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 20%',
+                      transition: 'transform 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
+                  />
                   <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, #e0f2fe, #bae6fd)',
-                    color: 'var(--ocean-primary)',
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '8px',
+                    background: 'rgba(5, 22, 42, 0.75)',
+                    color: 'white',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '0.75rem',
+                    backdropFilter: 'blur(4px)',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.2rem'
+                    gap: '4px'
                   }}>
-                    <i className={`fa-solid ${proj.icon}`}></i>
+                    <i className="fa-solid fa-magnifying-glass-plus"></i> คลิกดูภาพขยาย
                   </div>
                 </div>
 
-                <h3 style={{ fontSize: '1.2rem', color: 'var(--ocean-navy)', marginBottom: '10px', lineHeight: '1.4' }}>
-                  {proj.title}
-                </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '16px' }}>
-                  {proj.desc}
-                </p>
+                <div style={{ padding: '24px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      color: 'var(--ocean-primary)',
+                      background: '#e0f2fe',
+                      padding: '4px 10px',
+                      borderRadius: '12px'
+                    }}>
+                      {proj.badge}
+                    </span>
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '10px',
+                      background: 'linear-gradient(135deg, #e0f2fe, #bae6fd)',
+                      color: 'var(--ocean-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.1rem'
+                    }}>
+                      <i className={`fa-solid ${proj.icon}`}></i>
+                    </div>
+                  </div>
 
-                <div className="edu-project-box" style={{ background: '#f8fafc', margin: 0 }}>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', marginBottom: '8px' }}>
-                    <i className="fa-solid fa-check-circle" style={{ color: 'var(--ocean-primary)' }}></i> จุดเด่นและองค์ประกอบสำคัญ:
-                  </h4>
-                  <ul style={{ paddingLeft: '18px', margin: 0, fontSize: '0.85rem', color: '#475569', lineHeight: '1.6' }}>
-                    {proj.highlights.map((h, hIdx) => (
-                      <li key={hIdx}>{h}</li>
-                    ))}
-                  </ul>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--ocean-navy)', marginBottom: '10px', lineHeight: '1.4' }}>
+                    {proj.title}
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '16px' }}>
+                    {proj.desc}
+                  </p>
+
+                  <div className="edu-project-box" style={{ background: '#f8fafc', margin: 0, padding: '12px' }}>
+                    <h4 style={{ fontSize: '0.82rem', color: 'var(--ocean-navy)', marginBottom: '6px' }}>
+                      <i className="fa-solid fa-check-circle" style={{ color: 'var(--ocean-primary)' }}></i> องค์ประกอบสำคัญ:
+                    </h4>
+                    <ul style={{ paddingLeft: '16px', margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: '1.5' }}>
+                      {proj.highlights.map((h, hIdx) => (
+                        <li key={hIdx}>{h}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div style={{ marginTop: '20px', paddingTop: '12px', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.8rem', color: 'var(--ocean-primary)', fontWeight: 600 }}>
+              <div style={{ padding: '12px 24px', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#fafbfc' }}>
+                <span style={{ fontSize: '0.78rem', color: 'var(--ocean-primary)', fontWeight: 600 }}>
                   <i className="fa-solid fa-folder-open"></i> {proj.categoryName}
                 </span>
-                <span style={{ fontSize: '0.8rem', color: '#10b981', fontWeight: 600 }}>
-                  <i className="fa-solid fa-circle-check"></i> เสร็จสมบูรณ์
+                <span style={{ fontSize: '0.78rem', color: '#10b981', fontWeight: 600 }}>
+                  <i className="fa-solid fa-circle-check"></i> ผลงานจริง
                 </span>
               </div>
             </div>

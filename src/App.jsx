@@ -43,7 +43,7 @@ export default function App() {
       <Education onOpenLightbox={handleOpenLightbox} />
       <Talent />
       <Certificates />
-      <Performance />
+      <Performance onOpenLightbox={handleOpenLightbox} />
       <SoftSkills />
       <HardSkills />
       <Tools />
