@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import {
+  pdf_page_3_png,
+  pdf_page_4_png,
+  pdf_page_5_png,
+} from '../assets/images';
 
-export default function Certificates() {
+export default function Certificates({ onOpenLightbox }) {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const certificates = [
@@ -12,7 +17,9 @@ export default function Certificates() {
       category: 'tech',
       badge: 'AI & Information Management',
       color: '#0284c7',
-      icon: 'fa-robot'
+      icon: 'fa-robot',
+      image: pdf_page_3_png,
+      imageCaption: 'เกียรติบัตร: การอบรมเชิงปฏิบัติการ AI เพื่อการจัดการสารสนเทศ (24 มิ.ย. 67)'
     },
     {
       title: 'Workshop การพัฒนาทักษะอาชีพ 2 อาชีพช่างแต่งหน้าและทำผม',
@@ -22,7 +29,9 @@ export default function Certificates() {
       category: 'skill',
       badge: 'Workshop ทักษะอาชีพที่ 2',
       color: '#f43f5e',
-      icon: 'fa-wand-magic-sparkles'
+      icon: 'fa-wand-magic-sparkles',
+      image: pdf_page_3_png,
+      imageCaption: 'เกียรติบัตร: Workshop การพัฒนาทักษะอาชีพ 2 (4 ก.ค. 67)'
     },
     {
       title: 'รางวัลชมเชย การแข่งขันนำเสนอแผนธุรกิจ',
@@ -32,7 +41,9 @@ export default function Certificates() {
       category: 'business',
       badge: '🏆 รางวัลชมเชย แผนธุรกิจ',
       color: '#eab308',
-      icon: 'fa-trophy'
+      icon: 'fa-trophy',
+      image: pdf_page_4_png,
+      imageCaption: 'เกียรติบัตร: รางวัลชมเชย การแข่งขันนำเสนอแผนธุรกิจ Soft Power (20 พ.ย. 67)'
     },
     {
       title: 'การอบรมเชิงปฏิบัติการ "การจัดทำแผนธุรกิจ"',
@@ -42,7 +53,9 @@ export default function Certificates() {
       category: 'business',
       badge: 'FMS Young Startup',
       color: '#10b981',
-      icon: 'fa-lightbulb'
+      icon: 'fa-lightbulb',
+      image: pdf_page_4_png,
+      imageCaption: 'เกียรติบัตร: การอบรมเชิงปฏิบัติการ การจัดทำแผนธุรกิจ FMS Young Startup (8 พ.ย. 67)'
     },
     {
       title: 'การแข่งขันทักษะด้านการจัดการธุรกิจ',
@@ -52,7 +65,9 @@ export default function Certificates() {
       category: 'business',
       badge: 'แข่งขันทักษะธุรกิจ',
       color: '#6366f1',
-      icon: 'fa-briefcase'
+      icon: 'fa-briefcase',
+      image: pdf_page_5_png,
+      imageCaption: 'เกียรติบัตร: การแข่งขันทักษะด้านการจัดการธุรกิจ (16 ก.พ. 68)'
     },
     {
       title: 'การอบรมเชิงปฏิบัติการเตรียมความพร้อมการสอบวัดมาตรฐานภาษาอังกฤษ (TOEIC)',
@@ -62,7 +77,9 @@ export default function Certificates() {
       category: 'language',
       badge: 'TOEIC Preparation',
       color: '#0ea5e9',
-      icon: 'fa-language'
+      icon: 'fa-language',
+      image: pdf_page_5_png,
+      imageCaption: 'เกียรติบัตร: เตรียมความพร้อมการสอบวัดมาตรฐานภาษาอังกฤษ TOEIC (18 ม.ค. 68)'
     }
   ];
 
@@ -79,7 +96,7 @@ export default function Certificates() {
             <i className="fa-solid fa-certificate"></i> เกียรติบัตรและการเข้าร่วมกิจกรรม
           </h2>
           <p className="section-desc">
-            หลักฐานความมุ่งมั่นในการเรียนรู้ พัฒนาทักษะวิชาชีพ และการเข้าร่วมแข่งขันในระดับอุดมศึกษา
+            หลักฐานความมุ่งมั่นในการเรียนรู้ พัฒนาทักษะวิชาชีพ และการเข้าร่วมแข่งขันในระดับอุดมศึกษา (คลิกที่ภาพเพื่อดูภาพขยาย)
           </p>
 
           {/* Filter Buttons */}
@@ -122,52 +139,102 @@ export default function Certificates() {
                 borderTop: `4px solid ${cert.color}`,
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                padding: '0',
+                overflow: 'hidden',
+                borderRadius: '16px'
               }}
             >
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                  <span style={{ 
-                    fontSize: '0.75rem', 
-                    fontWeight: 700, 
-                    color: cert.color,
-                    background: `${cert.color}15`,
-                    padding: '4px 10px',
-                    borderRadius: '12px'
-                  }}>
-                    {cert.badge}
-                  </span>
+                {/* ภาพเกียรติบัตรจาก PDF */}
+                <div 
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '200px',
+                    overflow: 'hidden',
+                    background: '#f8fafc',
+                    cursor: onOpenLightbox ? 'pointer' : 'default',
+                    borderBottom: '1px solid #e2e8f0'
+                  }}
+                  onClick={() => onOpenLightbox && onOpenLightbox(cert.image, cert.title, cert.imageCaption)}
+                  title="คลิกเพื่อดูภาพเกียรติบัตรขนาดเต็ม"
+                >
+                  <img 
+                    src={cert.image} 
+                    alt={cert.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 40%',
+                      transition: 'transform 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
+                  />
                   <div style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '50%',
-                    background: `${cert.color}20`,
-                    color: cert.color,
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '8px',
+                    background: 'rgba(5, 22, 42, 0.75)',
+                    color: 'white',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '0.72rem',
+                    backdropFilter: 'blur(4px)',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1rem'
+                    gap: '4px'
                   }}>
-                    <i className={`fa-solid ${cert.icon}`}></i>
+                    <i className="fa-solid fa-magnifying-glass-plus"></i> ดูเกียรติบัตร
                   </div>
                 </div>
 
-                <h3 style={{ fontSize: '1.15rem', color: 'var(--ocean-navy)', marginBottom: '8px', lineHeight: '1.4' }}>
-                  {cert.title}
-                </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: '1.5' }}>
-                  {cert.subtitle}
-                </p>
+                <div style={{ padding: '20px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                    <span style={{ 
+                      fontSize: '0.75rem', 
+                      fontWeight: 700, 
+                      color: cert.color,
+                      background: `${cert.color}15`,
+                      padding: '4px 10px',
+                      borderRadius: '12px'
+                    }}>
+                      {cert.badge}
+                    </span>
+                    <div style={{
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '50%',
+                      background: `${cert.color}20`,
+                      color: cert.color,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.95rem'
+                    }}>
+                      <i className={`fa-solid ${cert.icon}`}></i>
+                    </div>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.08rem', color: 'var(--ocean-navy)', marginBottom: '8px', lineHeight: '1.4' }}>
+                    {cert.title}
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: '1.5' }}>
+                    {cert.subtitle}
+                  </p>
+                </div>
               </div>
 
               <div style={{ 
                 borderTop: '1px solid #f1f5f9', 
-                paddingTop: '12px', 
-                marginTop: '12px',
+                padding: '12px 20px',
+                background: '#fafbfc',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                fontSize: '0.82rem',
+                fontSize: '0.78rem',
                 color: '#64748b'
               }}>
                 <span><i className="fa-solid fa-university"></i> {cert.issuer}</span>

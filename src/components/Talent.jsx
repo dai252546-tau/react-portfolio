@@ -1,6 +1,7 @@
 import React from 'react';
+import { pdf_page_2_png } from '../assets/images';
 
-export default function Talent() {
+export default function Talent({ onOpenLightbox }) {
   const talents = [
     {
       title: 'ร้องเพลง',
@@ -57,6 +58,53 @@ export default function Talent() {
           <p className="section-desc">
             ทักษะความคิดสร้างสรรค์ ศิลปะ และความสามารถเฉพาะตัวที่ช่วยเติมเต็มบุคลิกภาพและสร้างมูลค่าเพิ่ม
           </p>
+        </div>
+
+        {/* แบนเนอร์พรีวิวภาพถ่ายความสามารถพิเศษจาก PDF หน้า 2 */}
+        <div 
+          style={{
+            background: 'white',
+            borderRadius: '16px',
+            border: '1px solid #e2e8f0',
+            overflow: 'hidden',
+            marginBottom: '32px',
+            boxShadow: '0 8px 24px rgba(0, 119, 182, 0.08)',
+            cursor: 'pointer'
+          }}
+          onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_2_png, 'ภาพความสามารถพิเศษ (Talent Showcase)', 'ร้องเพลง, ถ่ายแบบชุดแต่งงาน, แต่งหน้า, ดอกไม้ลวดกำมะหยี่, เพ้นท์เล็บปลอม, สร้อยข้อมือลูกปัด')}
+          title="คลิกเพื่อดูภาพความสามารถพิเศษขนาดเต็ม"
+        >
+          <div style={{ position: 'relative', width: '100%', maxHeight: '380px', overflow: 'hidden', background: '#f1f5f9' }}>
+            <img 
+              src={pdf_page_2_png} 
+              alt="Talent Showcase" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
+            />
+            <div style={{
+              position: 'absolute',
+              bottom: '12px',
+              right: '12px',
+              background: 'rgba(5, 22, 42, 0.8)',
+              color: 'white',
+              padding: '6px 14px',
+              borderRadius: '20px',
+              fontSize: '0.82rem',
+              backdropFilter: 'blur(4px)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}>
+              <i className="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อดูภาพหน้า Talent จากแฟ้มสะสมผลงาน
+            </div>
+          </div>
+          <div style={{ padding: '16px 24px', background: '#fafbfc', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', fontWeight: 600 }}>
+              <i className="fa-solid fa-images" style={{ color: 'var(--ocean-primary)' }}></i> แกลเลอรีภาพความสามารถพิเศษ 6 ด้าน (จากหน้า 2 ของแฟ้มสะสมผลงาน)
+            </span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--ocean-primary)', fontWeight: 600 }}>
+              เปิดดูขนาดเต็ม &raquo;
+            </span>
+          </div>
         </div>
 
         <div className="hard-skills-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>

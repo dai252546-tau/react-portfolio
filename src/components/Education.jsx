@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { mc_activity_jpg } from '../assets/images';
+import { mc_activity_jpg, pdf_page_1_png } from '../assets/images';
 
 export default function Education({ onOpenLightbox }) {
   const [showTranscript, setShowTranscript] = useState(false);
@@ -49,7 +49,36 @@ export default function Education({ onOpenLightbox }) {
               </p>
             </div>
 
-            {/* ปุ่มเปิดดูรายละเอียด Transcript */}
+            {/* การ์ดพรีวิวเอกสาร Transcript จาก PDF */}
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '10px 14px',
+                background: '#f8fafc',
+                border: '1px dashed var(--ocean-primary)',
+                borderRadius: '8px',
+                marginBottom: '14px',
+                cursor: 'pointer'
+              }}
+              onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_1_png, 'ใบแสดงผลการเรียน (Transcript)', 'ใบแสดงผลการเรียนประจำปี 2567 มหาวิทยาลัยราชภัฏกำแพงเพชร GPA 3.75')}
+              title="คลิกเพื่อดูใบ Transcript ฉบับเต็ม"
+            >
+              <div style={{ width: '48px', height: '60px', overflow: 'hidden', borderRadius: '4px', border: '1px solid #cbd5e1', flexShrink: 0 }}>
+                <img src={pdf_page_1_png} alt="Transcript thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ flex: 1 }}>
+                <strong style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', display: 'block' }}>
+                  <i className="fa-solid fa-file-pdf" style={{ color: '#ef4444' }}></i> เอกสารใบแสดงผลการเรียน (Transcript)
+                </strong>
+                <span style={{ fontSize: '0.78rem', color: 'var(--ocean-primary)' }}>
+                  คลิกเพื่อเปิดดูภาพเอกสารต้นฉบับขนาดเต็ม &raquo;
+                </span>
+              </div>
+            </div>
+
+            {/* ปุ่มเปิดดูรายละเอียดสรุปเกรด */}
             <button
               onClick={() => setShowTranscript(!showTranscript)}
               style={{
@@ -70,8 +99,8 @@ export default function Education({ onOpenLightbox }) {
                 transition: 'all 0.2s'
               }}
             >
-              <i className={`fa-solid ${showTranscript ? 'fa-eye-slash' : 'fa-file-lines'}`}></i>
-              {showTranscript ? 'ซ่อนรายละเอียดใบแสดงผลการเรียน (Transcript)' : 'ดูสรุปผลการเรียนรายภาค (Transcript 2567)'}
+              <i className={`fa-solid ${showTranscript ? 'fa-eye-slash' : 'fa-list-check'}`}></i>
+              {showTranscript ? 'ซ่อนสรุปผลการเรียนรายภาค' : 'ดูสรุปผลการเรียนรายภาค (GPA Breakdown)'}
             </button>
 
             {/* ตาราง Transcript ขยาย */}
