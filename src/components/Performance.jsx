@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {
-  performance_page_6_png,
-  performance_page_7_png,
-  performance_page_8_png,
-  performance_page_9_png,
+  perf_dashboard_png,
+  perf_line_notify_png,
+  perf_recruitment_system_png,
+  perf_hr_poster_png,
+  perf_admission_poster_jpg,
   performance_page_10_png,
 } from '../assets/images';
 
@@ -17,8 +18,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'สร้าง Dashboard ด้วย Google Data Studio (Looker Studio)',
       badge: 'Data Analytics & Reporting',
       icon: 'fa-chart-pie',
-      image: performance_page_6_png,
-      imageCaption: 'Dashboard Google Data Studio & ระบบแจ้งเตือน Line Notify',
+      image: perf_dashboard_png,
+      imageCaption: 'Dashboard Google Data Studio: Expense Report วิเคราะห์และสรุปผลค่าใช้จ่าย',
       desc: 'ออกแบบ Expense Report และ Dashboard รายงานข้อมูลค่าใช้จ่ายแบบ Real-time พร้อมแผนภูมิวงกลมและกราฟแท่งเปรียบเทียบ เพื่อการวิเคราะห์และตัดสินใจทางธุรกิจอย่างแม่นยำ',
       highlights: [
         'ออกแบบ KPI Cards แสดงยอดรวมและการจัดประเภทค่าใช้จ่าย',
@@ -32,8 +33,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'Google Forms + แนบรูปภาพ แจ้งเตือนผ่าน Line Notify',
       badge: 'Automation & Workflow',
       icon: 'fa-bell',
-      image: performance_page_6_png,
-      imageCaption: 'ฟอร์มสำรวจข้อมูลพร้อมระบบส่งรูปภาพและแจ้งเตือนผ่าน Line Notify ทันที',
+      image: perf_line_notify_png,
+      imageCaption: 'ระบบแจ้งเตือนหลักฐานการอบรมและรูปภาพผ่าน Line Notify แบบเรียลไทม์',
       desc: 'พัฒนาระบบสำรวจข้อมูลการเข้าอบรม พร้อมฟังก์ชันแนบรูปภาพหลักฐานและส่งการแจ้งเตือนแบบทันที (Instant Notification) ผ่าน Line Notify แบบไม่จำกัดจำนวนครั้งไปยังกลุ่มงาน',
       highlights: [
         'สร้างแบบฟอร์มลงทะเบียนและรับไฟล์ภาพหลักฐาน',
@@ -47,8 +48,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'สร้างระบบรับสมัครงาน (Recruitment System & AppSheet)',
       badge: 'HR Application & Database',
       icon: 'fa-users-gear',
-      image: performance_page_7_png,
-      imageCaption: 'โครงสร้างฐานข้อมูล Google Sheets และหน้าตา Application สำหรับฝ่าย HR',
+      image: perf_recruitment_system_png,
+      imageCaption: 'โครงสร้างฐานข้อมูลและ Application จัดการใบสมัครงานสำหรับฝ่าย HR',
       desc: 'พัฒนาระบบฐานข้อมูลและแอปพลิเคชันจัดการใบสมัครงาน รวบรวมข้อมูลผู้สมัคร ตำแหน่งงาน เงินเดือน ประวัติส่วนตัว พร้อมรองรับลายเซ็นดิจิทัลและสถานะการสัมภาษณ์',
       highlights: [
         'ออกแบบ Data Schema บน Google Sheets (Row, Type, Key, Label)',
@@ -62,8 +63,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'สื่อใบประกาศรับสมัครพนักงาน (HR Recruitment Posters)',
       badge: 'Graphic & Recruitment Design',
       icon: 'fa-bullhorn',
-      image: performance_page_8_png,
-      imageCaption: 'ใบประกาศรับสมัครพนักงาน ตำแหน่งนักการบัญชี (บริษัท TKCHUR. จำกัด)',
+      image: perf_hr_poster_png,
+      imageCaption: 'ใบประกาศรับสมัครพนักงาน ตำแหน่งนักการบัญชี (บริษัท TKChur. จำกัด)',
       desc: 'ออกแบบใบประกาศรับสมัครงาน เช่น ตำแหน่งนักการบัญชี คุมโทนสี Corporate สวยงาม ชัดเจน ระบุคุณสมบัติ สิทธิประโยชน์ สวัสดิการ และช่องทางการติดต่ออย่างเป็นมืออาชีพ',
       highlights: [
         'จัดวาง Typography และ Visual Hierarchy ให้อ่านง่าย สะดุดตา',
@@ -77,8 +78,8 @@ export default function Performance({ onOpenLightbox }) {
       title: 'สื่อใบประกาศรับสมัครเรียน & สื่อองค์กร (PR & Admission Posters)',
       badge: 'Brand PR & Marketing Materials',
       icon: 'fa-graduation-cap',
-      image: performance_page_9_png,
-      imageCaption: 'โปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่และรับสมัครงาน',
+      image: perf_admission_poster_jpg,
+      imageCaption: 'โปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่ สาขาวิชาการจัดการธุรกิจ มรภ.กำแพงเพชร',
       desc: 'ออกแบบโปสเตอร์ประชาสัมพันธ์การเปิดรับสมัครนักศึกษาใหม่ คณะวิทยาการจัดการ สาขาวิชาการจัดการธุรกิจ มรภ.กำแพงเพชร ดีไซน์สดใส ดึงดูดกลุ่มเป้าหมายนักเรียนและผู้สนใจ',
       highlights: [
         'ดีไซน์สดใส ทันสมัย ดึงดูดสายตาและสร้างการจดจำ',
