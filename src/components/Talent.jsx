@@ -1,11 +1,12 @@
 import React from 'react';
 import {
   pdf_page_2_png,
+  talent_gallery_banner_png,
   talent_singing_jpg,
   talent_wedding_model_jpg,
   talent_makeup_jpg,
   talent_flower_wire_jpg,
-  talent_nail_art_jpg,
+  talent_nail_art_cat_eye_jpg,
   talent_bracelet_png,
 } from '../assets/images';
 
@@ -53,8 +54,8 @@ export default function Talent({ onOpenLightbox }) {
       tag: 'Nail Art Design',
       desc: 'ออกแบบลวดลายเพ้นท์เล็บปลอมตามเทรนด์แฟชั่น ผสมผสานคู่สีและดีไซน์ประณีต',
       color: '#0284c7',
-      image: talent_nail_art_jpg,
-      caption: 'ความสามารถพิเศษ: ออกแบบและเพ้นท์เล็บปลอม'
+      image: talent_nail_art_cat_eye_jpg,
+      caption: 'ความสามารถพิเศษ: ออกแบบและเพ้นท์เล็บปลอม (Cat-eye Glitter Nails)'
     },
     {
       title: 'สร้อยข้อมือลูกปัด (IG: Jewelrybirdstudio)',
@@ -80,7 +81,7 @@ export default function Talent({ onOpenLightbox }) {
           </p>
         </div>
 
-        {/* แบนเนอร์พรีวิวภาพถ่ายความสามารถพิเศษจาก PDF หน้า 2 */}
+        {/* แบนเนอร์พรีวิวภาพถ่ายความสามารถพิเศษ 6 ด้าน */}
         <div 
           style={{
             background: 'white',
@@ -91,13 +92,13 @@ export default function Talent({ onOpenLightbox }) {
             boxShadow: '0 8px 24px rgba(0, 119, 182, 0.08)',
             cursor: 'pointer'
           }}
-          onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_2_png, 'ภาพความสามารถพิเศษ (Talent Showcase)', 'ร้องเพลง, ถ่ายแบบชุดแต่งงาน, แต่งหน้า, ดอกไม้ลวดกำมะหยี่, เพ้นท์เล็บปลอม, สร้อยข้อมือลูกปัด')}
+          onClick={() => onOpenLightbox && onOpenLightbox(talent_gallery_banner_png, 'แกลเลอรีภาพความสามารถพิเศษ 6 ด้าน (Talent Showcase)', 'ร้องเพลง, ถ่ายแบบชุดแต่งงาน, แต่งหน้า, ดอกไม้ลวดกำมะหยี่, เพ้นท์เล็บปลอม, สร้อยข้อมือลูกปัด')}
           title="คลิกเพื่อดูภาพความสามารถพิเศษขนาดเต็ม"
         >
-          <div style={{ position: 'relative', width: '100%', maxHeight: '380px', overflow: 'hidden', background: '#f1f5f9' }}>
+          <div style={{ position: 'relative', width: '100%', maxHeight: '420px', overflow: 'hidden', background: '#f1f5f9' }}>
             <img 
-              src={pdf_page_2_png} 
-              alt="Talent Showcase" 
+              src={talent_gallery_banner_png} 
+              alt="Talent Showcase 6 Grid" 
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
             />
             <div style={{
@@ -114,12 +115,12 @@ export default function Talent({ onOpenLightbox }) {
               alignItems: 'center',
               gap: '6px'
             }}>
-              <i className="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อดูภาพหน้า Talent จากแฟ้มสะสมผลงาน
+              <i className="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อดูแกลเลอรีภาพความสามารถพิเศษ 6 ด้านขนาดเต็ม
             </div>
           </div>
           <div style={{ padding: '16px 24px', background: '#fafbfc', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', fontWeight: 600 }}>
-              <i className="fa-solid fa-images" style={{ color: 'var(--ocean-primary)' }}></i> แกลเลอรีภาพความสามารถพิเศษ 6 ด้าน (จากหน้า 2 ของแฟ้มสะสมผลงาน)
+              <i className="fa-solid fa-images" style={{ color: 'var(--ocean-primary)' }}></i> แกลเลอรีภาพความสามารถพิเศษ 6 ด้าน (ร้องเพลง, ถ่ายแบบ, แต่งหน้า, ดอกไม้ลวด, เพ้นท์เล็บ, สร้อยข้อมือลูกปัด)
             </span>
             <span style={{ fontSize: '0.8rem', color: 'var(--ocean-primary)', fontWeight: 600 }}>
               เปิดดูขนาดเต็ม &raquo;
