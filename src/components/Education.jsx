@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { mc_activity_jpg } from '../assets/images';
 
 export default function Education({ onOpenLightbox }) {
+  const [showTranscript, setShowTranscript] = useState(false);
+
   return (
     <section id="education" className="section-wrap">
       <div className="container">
         <div className="section-header">
           <span className="section-tag">ACADEMIC BACKGROUND</span>
           <h2 className="section-title">
-            <i className="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา
+            <i className="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา &amp; ผลการเรียน
           </h2>
-          <p className="section-desc">ความมุ่งมั่นทางการศึกษาและโครงงานวิจัยทางธุรกิจ</p>
+          <p className="section-desc">ความมุ่งมั่นทางการศึกษา เกียรตินิยม โครงงานวิจัย และประวัติการฝึกอบรม</p>
         </div>
 
         <div className="edu-grid">
@@ -28,10 +30,81 @@ export default function Education({ onOpenLightbox }) {
               </div>
             </div>
             <p>• คณะวิทยาการจัดการ สาขาวิชาบริหารธุรกิจ (การจัดการธุรกิจ)</p>
-            <p>• นักศึกษาชั้นปีที่ 4</p>
-            <div className="edu-status-badge">
+            <p>• นักศึกษาชั้นปีที่ 4 (รหัสนักศึกษา 661420417 เข้าปี 2566)</p>
+            <p>• จำนวนหน่วยกิตสะสม: 108 หน่วยกิต | ค่าคะแนนเฉลี่ย: 405.0/108</p>
+            <div className="edu-status-badge" style={{ marginBottom: '12px' }}>
               <i className="fa-solid fa-star" style={{ color: '#ffd166' }}></i> ผลการเรียนเฉลี่ยสะสม (GPA) : 3.75
             </div>
+
+            {/* การทดสอบมาตรฐานทักษะ */}
+            <div style={{ background: '#f0f9ff', padding: '12px', borderRadius: '8px', border: '1px solid #bae6fd', marginBottom: '14px' }}>
+              <h5 style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', marginBottom: '4px' }}>
+                <i className="fa-solid fa-certificate" style={{ color: 'var(--ocean-primary)' }}></i> ผลการทดสอบทักษะมาตรฐาน:
+              </h5>
+              <p style={{ fontSize: '0.8rem', color: '#334155', margin: '2px 0' }}>
+                ✓ ทักษะภาษาอังกฤษ: เสริมทักษะ 1, 2, 3 (ผ่านทุกเกณฑ์)
+              </p>
+              <p style={{ fontSize: '0.8rem', color: '#334155', margin: '2px 0' }}>
+                ✓ ทักษะคอมพิวเตอร์: ชุดที่ 1 &amp; ชุดที่ 2 ความรู้และการใช้งานเบื้องต้น (ผ่าน)
+              </p>
+            </div>
+
+            {/* ปุ่มเปิดดูรายละเอียด Transcript */}
+            <button
+              onClick={() => setShowTranscript(!showTranscript)}
+              style={{
+                width: '100%',
+                background: showTranscript ? 'var(--ocean-navy)' : 'var(--ocean-primary)',
+                color: 'white',
+                border: 'none',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                marginBottom: '14px',
+                transition: 'all 0.2s'
+              }}
+            >
+              <i className={`fa-solid ${showTranscript ? 'fa-eye-slash' : 'fa-file-lines'}`}></i>
+              {showTranscript ? 'ซ่อนรายละเอียดใบแสดงผลการเรียน (Transcript)' : 'ดูสรุปผลการเรียนรายภาค (Transcript 2567)'}
+            </button>
+
+            {/* ตาราง Transcript ขยาย */}
+            {showTranscript && (
+              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '14px', marginBottom: '14px', fontSize: '0.82rem' }}>
+                <h5 style={{ color: 'var(--ocean-navy)', marginBottom: '8px', fontWeight: 700 }}>
+                  <i className="fa-solid fa-award" style={{ color: '#0284c7' }}></i> สรุปผลการเรียนรายภาคการศึกษา (GPA)
+                </h5>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '10px' }}>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 1/66:</strong> GPA 4.00 (60.0/15)
+                  </div>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 2/66:</strong> GPA 3.35 (70.5/21)
+                  </div>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 1/67:</strong> GPA 3.66 (66.0/18)
+                  </div>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 2/67:</strong> GPA 4.00 (72.0/18)
+                  </div>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 1/68:</strong> GPA 3.58 (64.5/18)
+                  </div>
+                  <div style={{ background: 'white', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    <strong>ภาค 2/68:</strong> GPA 4.00 (72.0/18)
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.78rem', color: '#64748b', margin: 0 }}>
+                  * ผลการเรียนเกรด A ในวิชาแกนสำคัญ: การจัดการธุรกิจ, องค์กรและการจัดการ, การวางแผนโครงการ, การวิเคราะห์ข้อมูลเพื่อการตัดสินใจทางธุรกิจ
+                </p>
+              </div>
+            )}
 
             {/* โครงงานวิจัย Projects */}
             <div className="edu-project-box">
@@ -91,6 +164,14 @@ export default function Education({ onOpenLightbox }) {
                 </h4>
                 <p>
                   เพื่อสร้าง Personal Branding (พ.ศ. 2569) | เทคนิคการสื่อสารในที่สาธารณะและการสร้างภาพลักษณ์ความเป็นมืออาชีพ
+                </p>
+              </div>
+              <div className="edu-project-box" style={{ borderLeftColor: '#f59e0b', marginTop: 0 }}>
+                <h4>
+                  <i className="fa-solid fa-robot"></i> อบรม AI เพื่อการจัดการสารสนเทศและการวิจัย
+                </h4>
+                <p>
+                  สำนักวิทยบริการและเทคโนโลยีสารสนเทศ (พ.ศ. 2567) | การประยุกต์ใช้ AI ในการสืบค้นข้อมูล การเขียนบรรณานุกรม และจัดทำดัชนีคำ
                 </p>
               </div>
             </div>

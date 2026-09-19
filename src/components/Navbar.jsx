@@ -22,10 +22,11 @@ export default function Navbar() {
         <li><a href="#hero">หน้าแรก</a></li>
         <li><a href="#profile">ข้อมูลส่วนตัว</a></li>
         <li><a href="#education">การศึกษา</a></li>
-        <li><a href="#soft-skills">Soft Skills</a></li>
-        <li><a href="#hard-skills">Hard Skills</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#activities">กิจกรรม (5+5)</a></li>
+        <li><a href="#talents">ความสามารถพิเศษ</a></li>
+        <li><a href="#certificates">เกียรติบัตร</a></li>
+        <li><a href="#performance">ผลงานจริง</a></li>
+        <li><a href="#soft-skills">ทักษะ</a></li>
+        <li><a href="#activities">กิจกรรม</a></li>
       </ul>
       <a href="#contact" className="nav-contact-btn">
         <i className="fa-solid fa-paper-plane"></i> ติดต่อฉัน
