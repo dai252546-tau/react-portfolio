@@ -6,7 +6,7 @@ import {
   talent_wedding_model_jpg,
   talent_makeup_jpg,
   talent_flower_wire_jpg,
-  talent_nail_art_cat_eye_jpg,
+  talent_red_nail_art_png,
   talent_bracelet_png,
 } from '../assets/images';
 
@@ -54,8 +54,8 @@ export default function Talent({ onOpenLightbox }) {
       tag: 'Nail Art Design',
       desc: 'ออกแบบลวดลายเพ้นท์เล็บปลอมตามเทรนด์แฟชั่น ผสมผสานคู่สีและดีไซน์ประณีต',
       color: '#0284c7',
-      image: talent_nail_art_cat_eye_jpg,
-      caption: 'ความสามารถพิเศษ: ออกแบบและเพ้นท์เล็บปลอม (Cat-eye Glitter Nails)'
+      image: talent_red_nail_art_png,
+      caption: 'ความสามารถพิเศษ: ออกแบบและเพ้นท์เล็บปลอมสีแดง'
     },
     {
       title: 'สร้อยข้อมือลูกปัด (IG: Jewelrybirdstudio)',

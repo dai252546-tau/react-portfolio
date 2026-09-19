@@ -49,31 +49,69 @@ export default function Education({ onOpenLightbox }) {
               </p>
             </div>
 
-            {/* การ์ดพรีวิวเอกสาร Transcript จาก PDF */}
+            {/* แสดงภาพเอกสาร Transcript จาก PDF โดยตรง */}
             <div 
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                padding: '10px 14px',
+                borderRadius: '12px',
+                border: '1px solid #bae6fd',
                 background: '#f8fafc',
-                border: '1px dashed var(--ocean-primary)',
-                borderRadius: '8px',
-                marginBottom: '14px',
-                cursor: 'pointer'
+                overflow: 'hidden',
+                marginBottom: '16px',
+                boxShadow: '0 4px 12px rgba(2, 132, 199, 0.06)'
               }}
-              onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_1_png, 'ใบแสดงผลการเรียน (Transcript)', 'ใบแสดงผลการเรียนประจำปี 2567 มหาวิทยาลัยราชภัฏกำแพงเพชร GPA 3.75')}
-              title="คลิกเพื่อดูใบ Transcript ฉบับเต็ม"
             >
-              <div style={{ width: '48px', height: '60px', overflow: 'hidden', borderRadius: '4px', border: '1px solid #cbd5e1', flexShrink: 0 }}>
-                <img src={pdf_page_1_png} alt="Transcript thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div 
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '240px',
+                  background: '#f1f5f9',
+                  overflow: 'hidden',
+                  cursor: onOpenLightbox ? 'pointer' : 'default',
+                  borderBottom: '1px solid #e2e8f0'
+                }}
+                onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_1_png, 'ใบแสดงผลการเรียน (Transcript)', 'ใบระเบียนผลการเรียน มหาวิทยาลัยราชภัฏกำแพงเพชร บธ.บ. การจัดการธุรกิจ GPA 3.75')}
+                title="คลิกเพื่อดูใบระเบียนผลการเรียน (Transcript) ขนาดเต็ม"
+              >
+                <img 
+                  src={pdf_page_1_png} 
+                  alt="ใบระเบียนผลการเรียน (Transcript)" 
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.04)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '10px',
+                  right: '10px',
+                  background: 'rgba(5, 22, 42, 0.8)',
+                  color: 'white',
+                  padding: '4px 12px',
+                  borderRadius: '20px',
+                  fontSize: '0.75rem',
+                  backdropFilter: 'blur(4px)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px'
+                }}>
+                  <i className="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อดูเอกสาร Transcript ฉบับเต็ม
+                </div>
               </div>
-              <div style={{ flex: 1 }}>
-                <strong style={{ fontSize: '0.85rem', color: 'var(--ocean-navy)', display: 'block' }}>
-                  <i className="fa-solid fa-file-pdf" style={{ color: '#ef4444' }}></i> เอกสารใบแสดงผลการเรียน (Transcript)
-                </strong>
-                <span style={{ fontSize: '0.78rem', color: 'var(--ocean-primary)' }}>
-                  คลิกเพื่อเปิดดูภาพเอกสารต้นฉบับขนาดเต็ม &raquo;
+              <div style={{ padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#fafbfc' }}>
+                <span style={{ fontSize: '0.82rem', color: 'var(--ocean-navy)', fontWeight: 600 }}>
+                  <i className="fa-solid fa-file-invoice" style={{ color: 'var(--ocean-primary)' }}></i> ใบระเบียนผลการเรียน (Transcript) มรภ.กำแพงเพชร
+                </span>
+                <span 
+                  onClick={() => onOpenLightbox && onOpenLightbox(pdf_page_1_png, 'ใบแสดงผลการเรียน (Transcript)', 'ใบระเบียนผลการเรียน มหาวิทยาลัยราชภัฏกำแพงเพชร บธ.บ. การจัดการธุรกิจ GPA 3.75')}
+                  style={{ fontSize: '0.78rem', color: 'var(--ocean-primary)', fontWeight: 600, cursor: 'pointer' }}
+                >
+                  ขยายดู &raquo;
                 </span>
               </div>
             </div>
